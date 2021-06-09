@@ -3,8 +3,11 @@
 *::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     box-sizing: inherit;
+    @include respond(phone) {
+        box-sizing: border-box;
+        // width: fit-content;
+    }
 }
 
 html {
@@ -25,9 +28,14 @@ html {
 }
 
 body {
-    box-sizing: border;
+    box-sizing: border-box;
     padding: 3rem;
     @include respond(tab-port) {
         padding: 0;
     }
+}
+
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
 }
